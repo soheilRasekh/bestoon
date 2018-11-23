@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+
+{% block head_content %}
+
+<link rel="stylesheet" type="text/css" href="/static/css/income_expense.css">
+
+
+{% endblock %}
+
+
+{% block content %}
+
+{% if done %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Well done...</strong> {{done}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+{% endif %}
+
+
+  <div class="row">
+      <div class="col-12">
+          <form action="." method="post" class="form">
+          <div class="get-in-touch">
+              <h3 class="text-center">
+                  {{type}}</h3>
+              <div class="form-group">
+                  <input type="text" class="form-control" id="text" placeholder="text" name="text" required/>
+              </div>
+              <div class="form-group">
+                  <input type="text" class="form-control" id="amount" placeholder="amount" name="amount" required/>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="token" placeholder="token" name="token" required/>
+              </div>
+              <button class="btn btn-danger btn-sm btn-block" role="button">Send it!</button>
+          </div>
+          </form>
+      </div>
+  </div>
+
+
+{% endblock %}
